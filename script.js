@@ -12,8 +12,14 @@ async function loadDiscord() {
   const user = data.data.discord_user;
   const avatar = user.avatar;
 
-  // Avatar-URL ohne PNG-Fallback -> Discord liefert automatisch GIF wenn animiert
-  const avatarUrl = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${avatar}?size=256`;
+  let avatarUrl = "";
+
+  // Prüfen ob animiert (fängt mit "a_" an)
+  if (avatar && avatar.startsWith("a_")) {
+    avatarUrl = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${avatar}.gif?size=256`;
+  } else {
+    avatarUrl = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${avatar}.png?size=256`;
+  }
 
   const avatarEl = document.getElementById("avatar");
   avatarEl.src = avatarUrl;
