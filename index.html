@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discord Bio</title>
+  <title>Discord Bio - Neon Glow</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,8 +17,8 @@
     <div class="card">
       <img id="discord-avatar" src="default.png" alt="avatar" class="avatar" />
       <h1 id="discord-username">Loading...</h1>
-      <p id="discord-status">...</p>
-      <button onclick="window.open('https://discord.com/users/YOUR_DISCORD_ID','_blank')">
+      <p id="discord-status">Loading status...</p>
+      <button onclick="window.open('https://discord.com/users/442048154800488448','_blank')">
         Add on Discord
       </button>
     </div>
@@ -27,7 +27,9 @@
     <div class="player">
       <audio id="audio" src="music.mp3"></audio>
       <button onclick="togglePlay()" id="play-btn">▶</button>
-      <span>$UICIDEBOY$ - NEW CHAINS, SAME SHACKLES</span>
+      <div class="progress-container" onclick="setProgress(event)">
+        <div class="progress" id="progress"></div>
+      </div>
     </div>
   </div>
 

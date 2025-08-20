@@ -2,9 +2,10 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
   text-align: center;
+  background: black;
 }
 
 #bg-video {
@@ -14,6 +15,7 @@ body, html {
   min-width: 100%;
   min-height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 .overlay {
@@ -22,45 +24,74 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 30px;
 }
 
 .card {
-  background: rgba(0,0,0,0.7);
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px 40px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 15px #0ff, 0 0 25px #f0f; }
+  to { box-shadow: 0 0 25px #0ff, 0 0 50px #f0f; }
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 2px solid white;
-}
-
-.player {
-  background: rgba(0,0,0,0.7);
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  border: 3px solid #0ff;
+  box-shadow: 0 0 20px #0ff, 0 0 30px #f0f;
 }
 
 button {
-  background: #5865F2;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
+  background: transparent;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: 0.3s;
   cursor: pointer;
 }
 
 button:hover {
-  background: #4752C4;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+  color: #0ff;
+}
+
+.player {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+}
+
+.progress-container {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress {
+  background: linear-gradient(90deg, #0ff, #f0f);
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
 }
