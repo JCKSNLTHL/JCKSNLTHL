@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Bio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hintergrund Video -->
+  <video autoplay loop muted playsinline id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+
+  <!-- Overlay Inhalt -->
+  <div class="overlay">
+    <div class="card">
+      <img id="discord-avatar" src="default.png" alt="avatar" class="avatar" />
+      <h1 id="discord-username">Loading...</h1>
+      <p id="discord-status">...</p>
+      <button onclick="window.open('https://discord.com/users/YOUR_DISCORD_ID','_blank')">
+        Add on Discord
+      </button>
+    </div>
+
+    <!-- Musik Player -->
+    <div class="player">
+      <audio id="audio" src="music.mp3"></audio>
+      <button onclick="togglePlay()" id="play-btn">▶</button>
+      <span>$UICIDEBOY$ - NEW CHAINS, SAME SHACKLES</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
